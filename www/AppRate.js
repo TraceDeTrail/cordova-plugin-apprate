@@ -63,7 +63,7 @@ AppRate = (function() {
         break;
       case 2:
         currentBtn = localeObj.yesButtonLabel;
-        tools.utils.dialog(localeObj.title,ocaleObj.message,[localeObj.cancelButtonLabel, localeObj.laterButtonLabel, localeObj.rateButtonLabel], localeObj.rateButtonLabel],false,promptForStoreRatingWindowButtonClickHandler,null,null);
+        tools.utils.dialog(localeObj.title,localeObj.message,[localeObj.cancelButtonLabel, localeObj.laterButtonLabel, localeObj.rateButtonLabel], localeObj.rateButtonLabel],false,promptForStoreRatingWindowButtonClickHandler,null,null);
         break;
     }
     return typeof base.onButtonClicked === "function" ? base.onButtonClicked(buttonIndex, currentBtn, "AppRatingPrompt") : function(){ };
