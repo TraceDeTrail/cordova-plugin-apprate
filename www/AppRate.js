@@ -278,8 +278,10 @@ AppRate = (function() {
   AppRate.navigateToAppStore = function() {
     var iOSVersion;
     var iOSStoreUrl;
-
-    if (/(iPhone|iPod|iPad)/i.test(navigator.userAgent.toLowerCase())) {
+    if(device.platform=='android'){
+     cordova.InAppBrowser.open(this.preferences.storeAppURL.android, '_system', 'location=no');
+    }
+   else{
       if (this.preferences.inAppReview) {
         updateiOSRatingData();
         var showNativePrompt = iOSRating.timesPrompted < 3;
@@ -294,15 +296,7 @@ AppRate = (function() {
         }
         cordova.InAppBrowser.open(iOSStoreUrl, '_system', 'location=no');
       }
-    } else if (/(Android)/i.test(navigator.userAgent.toLowerCase())) {
-      cordova.InAppBrowser.open(this.preferences.storeAppURL.android, '_system', 'location=no');
-    } else if (/(Windows|Edge)/i.test(navigator.userAgent.toLowerCase())) {
-      cordova.InAppBrowser.open(this.preferences.storeAppURL.windows, '_blank', 'location=no');
-    } else if (/(BlackBerry)/i.test(navigator.userAgent.toLowerCase())) {
-      cordova.InAppBrowser.open(this.preferences.storeAppURL.blackberry, '_system', 'location=no');
-    } else if (/(IEMobile|Windows Phone)/i.test(navigator.userAgent.toLowerCase())) {
-      cordova.InAppBrowser.open(this.preferences.storeAppURL.windows8, '_system', 'location=no');
-    }
+    } 
     return this;
   };
 
