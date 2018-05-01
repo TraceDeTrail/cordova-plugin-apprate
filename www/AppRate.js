@@ -287,7 +287,7 @@ AppRate = (function() {
         var showNativePrompt = iOSRating.timesPrompted < 3;
         exec(null, null, 'AppRate', 'launchiOSReview', [this.preferences.storeAppURL.ios, showNativePrompt]);
       } else {
-        iOSVersion = parseInt(number(device.version));
+        iOSVersion = parseInt(Number(device.version));
         if (iOSVersion < 9) {
           iOSStoreUrl = PREF_STORE_URL_FORMAT_IOS8 + this.preferences.storeAppURL.ios;
         } else {
