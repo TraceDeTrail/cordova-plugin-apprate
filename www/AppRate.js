@@ -48,7 +48,8 @@ AppRate = (function() {
     lastPromptDate: null
   };
 
-  promptForAppRatingWindowButtonClickHandler = function (buttonIndex) {
+  promptForAppRatingWindowButtonClickHandler = function (rep) {
+    var buttonIndex=rep.index-1;
     var base = AppRate.preferences.callbacks, currentBtn = null;
     switch (buttonIndex) {
       case 0:
@@ -68,7 +69,8 @@ AppRate = (function() {
     return typeof base.onButtonClicked === "function" ? base.onButtonClicked(buttonIndex, currentBtn, "AppRatingPrompt") : function(){ };
   };
 
-  promptForStoreRatingWindowButtonClickHandler = function(buttonIndex) {
+  promptForStoreRatingWindowButtonClickHandler = function(rep) {
+    var buttonIndex=rep.index-1;
     var base = AppRate.preferences.callbacks, currentBtn = null;
     switch (buttonIndex) {
       case 0:
@@ -94,7 +96,8 @@ AppRate = (function() {
     return typeof base.done === "function" ? base.done() : function(){ };
   };
 
-  promptForFeedbackWindowButtonClickHandler = function(buttonIndex) {
+  promptForFeedbackWindowButtonClickHandler = function(rep) {
+    var buttonIndex=rep.index-1;
     var base = AppRate.preferences.callbacks, currentBtn = null;
     switch (buttonIndex) {
       case 1:
@@ -147,9 +150,9 @@ AppRate = (function() {
       localeObj = Locales.getLocale(AppRate.preferences.useLanguage, AppRate.preferences.displayAppName, AppRate.preferences.customLocale);
 
       if(AppRate.preferences.simpleMode) {
-        navigator.notification.confirm(localeObj.message, promptForStoreRatingWindowButtonClickHandler, localeObj.title, [localeObj.cancelButtonLabel, localeObj.laterButtonLabel, localeObj.rateButtonLabel]);
+         tools.utils.dialog(localeObj.title,localeObj.message,[localeObj.cancelButtonLabel, localeObj.laterButtonLabel, localeObj.rateButtonLabel],false,promptForStoreRatingWindowButtonClickHandler,null,null);
       } else {
-        navigator.notification.confirm(localeObj.appRatePromptMessage, promptForAppRatingWindowButtonClickHandler, localeObj.appRatePromptTitle, [localeObj.noButtonLabel, localeObj.yesButtonLabel]);
+        tools.utils.dialog(localeObj.appRatePromptTitle,localeObj.appRatePromptMessage,[localeObj.noButtonLabel, localeObj.yesButtonLabel],false,promptForAppRatingWindowButtonClickHandler,null,null)
       }
 
       if (typeof base.onRateDialogShow === "function") {
