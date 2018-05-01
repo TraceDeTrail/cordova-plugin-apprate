@@ -205,7 +205,13 @@ Locales.addLocale(new Locale({
   message: "Si vous aimez utiliser %@, n’oubliez pas de voter sur l’App Store. Cela ne prend qu’une minute. Merci d’avance pour votre soutien !",
   cancelButtonLabel: "Non, merci",
   laterButtonLabel: "Me le rappeler ultérieurement",
-  rateButtonLabel: "Votez maintenant"
+  rateButtonLabel: "Votez maintenant",
+  yesButtonLabel: "Oui !",
+  noButtonLabel: "Pas vraiment",
+  appRatePromptTitle: 'Vous aimez utiliser %@',
+  feedbackPromptTitle: 'Un retour sur cette appli ?',
+  appRatePromptMessage:'Donnez nous 5 étoiles !',
+  feedbackPromptMessage:'Dites nous ce que vous en pensez !'
 }));
 
 Locales.addLocale(new Locale({
