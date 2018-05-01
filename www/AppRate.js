@@ -58,12 +58,12 @@ AppRate = (function() {
       case 1:
         currentBtn = localeObj.noButtonLabel;
         if(typeof base.handleNegativeFeedback === "function") {
-         tools.utils.dialog(localeObj.feedbackPromptTitle,localeObj.feedbackPromptMessage,[localeObj.noButtonLabel, localeObj.yesButtonLabel], localeObj.rateButtonLabel],false,promptForFeedbackWindowButtonClickHandler,null,null);
+         tools.utils.dialog(localeObj.feedbackPromptTitle,localeObj.feedbackPromptMessage,[localeObj.noButtonLabel, localeObj.yesButtonLabel], false,promptForFeedbackWindowButtonClickHandler,null,null);
         }
         break;
       case 2:
         currentBtn = localeObj.yesButtonLabel;
-        tools.utils.dialog(localeObj.title,localeObj.message,[localeObj.cancelButtonLabel, localeObj.laterButtonLabel, localeObj.rateButtonLabel], localeObj.rateButtonLabel],false,promptForStoreRatingWindowButtonClickHandler,null,null);
+        tools.utils.dialog(localeObj.title,localeObj.message,[localeObj.cancelButtonLabel, localeObj.laterButtonLabel, localeObj.rateButtonLabel],false,promptForStoreRatingWindowButtonClickHandler,null,null);
         break;
     }
     return typeof base.onButtonClicked === "function" ? base.onButtonClicked(buttonIndex, currentBtn, "AppRatingPrompt") : function(){ };
