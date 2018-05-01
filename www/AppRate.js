@@ -74,17 +74,14 @@ AppRate = (function() {
     var base = AppRate.preferences.callbacks, currentBtn = null;
     switch (buttonIndex) {
       case 0:
-        updateCounter('reset');
-        break;
-      case 1:
         currentBtn = localeObj.cancelButtonLabel;
         updateCounter('stop');
         break;
-      case 2:
+      case 1:
         currentBtn = localeObj.laterButtonLabel;
         updateCounter('reset');
         break;
-      case 3:
+      case 2:
         currentBtn = localeObj.rateButtonLabel;
         updateCounter('stop');
         AppRate.navigateToAppStore();
