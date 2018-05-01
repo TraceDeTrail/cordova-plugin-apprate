@@ -278,7 +278,7 @@ AppRate = (function() {
   AppRate.navigateToAppStore = function() {
     var iOSVersion;
     var iOSStoreUrl;
-    if(device.platform=='android'){
+    if(device.platform=='Android'){
      cordova.InAppBrowser.open(this.preferences.storeAppURL.android, '_system', 'location=no');
     }
    else{
