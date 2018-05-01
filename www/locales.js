@@ -202,10 +202,10 @@ Locales.addLocale(new Locale({
 Locales.addLocale(new Locale({
   language: 'fr',
   title: "Notez %@",
-  message: "Si vous aimez utiliser %@, n’oubliez pas de voter sur l’App Store. Cela ne prend qu’une minute. Merci d’avance pour votre soutien !",
+  message: "Vous aimez utiliser %@ ? Donnez nous 5 étoiles sur l’App Store, cela ne prend qu’une minute. Merci d’avance pour votre soutien !",
   cancelButtonLabel: "Non, merci",
   laterButtonLabel: "Me le rappeler ultérieurement",
-  rateButtonLabel: "Votez maintenant",
+  rateButtonLabel: "5 étoiles",
   yesButtonLabel: "Oui !",
   noButtonLabel: "Pas vraiment",
   appRatePromptTitle: 'Vous aimez utiliser %@',
